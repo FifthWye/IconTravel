@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+
+<?php 
+require 'db.php';
+?>
+
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <title>
+    <?php  echo R::findOne('configs','id = 1')->text; ?>
+  </title>
+  <meta name="description" content="<?php  echo R::findOne('configs','id = 3')->text; ?>">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="B-verify" content="9e8bcf84822b76320d77d4562ee3f2e34e06d3de" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="">
+  <meta property="og:site_name" content="">
+  <meta property="og:description" content="">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900|Montserrat:400,700' rel='stylesheet'
+    type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <script src="js/modernizr-2.7.1.js"></script>
+
+</head>
+
+<body>
+
+  <div class="loaderArea">
+    <div class='loader'>
+      <div class='loaderLogo'></div>
+    </div>
+    <div class="loading-text">LOADING</div>
+  </div>
+
+  <div class="modal discounts" tabindex="-1" role="dialog" id="d1">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">
+            <?php  echo R::findOne('configs','id = 4')->text; ?>
+          </h5>
+        </div>
+        <img src="<?php  echo R::findOne('configs','id = 4')->img; ?>"></img>
+        <div class="modal-body">
+          <p>
+            <?php  echo R::findOne('configs','id = 5')->text; ?>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="modal discounts" tabindex="-1" role="dialog" id="d2">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">
+            <?php  echo R::findOne('configs','id = 6')->text; ?>
+          </h5>
+        </div>
+        <img src="<?php  echo R::findOne('configs','id = 6')->img; ?>"></img>
+        <div class="modal-body">
+          <p>
+            <?php  echo R::findOne('configs','id = 7')->text; ?>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="modal discounts" tabindex="-1" role="dialog" id="d3">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">
+            <?php  echo R::findOne('configs','id = 8')->text; ?>
+          </h5>
+        </div>
+        <img src="<?php  echo R::findOne('configs','id = 8')->img; ?>"></img>
+        <div class="modal-body">
+          <p>
+            <?php  echo R::findOne('configs','id = 9')->text; ?>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="modal discounts" tabindex="-1" role="dialog" id="d4">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">
+            <?php  echo R::findOne('configs','id = 10')->text; ?>
+          </h5>
+        </div>
+        <img src="<?php  echo R::findOne('configs','id = 10')->img; ?>"></img>
+        <div class="modal-body">
+          <p>
+            <?php  echo R::findOne('configs','id = 11')->text; ?>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="modal" tabindex="-1" role="dialog" id="t1">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Успешно отправлено!</h5>
+
+        </div>
+        <div class="modal-body">
+          <p>Большое спасибо за ваш запрос, наши сотрудники подберут вам тур и свяжутся с вами в ближайшее время!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+
+
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="#top" class="text-logo">icon.travel</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="#invite" class="scroll">Подбор тура</a>
+          </li>
+          <li>
+            <a href="#discounts" class="scroll">Акции</a>
+          </li>
+          <li>
+            <a href="#reviews" class="scroll">Отзывы</a>
+          </li>
+          <li>
+            <a href="#contacts" class="scroll">Контакты</a>
+          </li>
+        </ul>
+      </div>
+      <!--/.navbar-collapse -->
+    </div>
+  </div>
+
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-6">
+          <a href="#top" class="text-logo">Icon.Travel</a>
+        </div>
+        <div class="col-xs-6 signin text-right navbar-nav">
+          <div class="menu">
+            <ul class="list-inline">
+              <li>
+                <a href="#invite" class="scroll">Подбор тура</a>
+              </li>
+              <li>
+                <a href="#discounts" class="scroll">Акции</a>
+              </li>
+              <li>
+                <a href="#reviews" class="scroll">Отзывы</a>
+              </li>
+              <li>
+                <a href="#contacts" class="scroll">Контакты</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="#top" class="row header-info">
+          <div class="col-md-10 col-md-offset-1 text-center">
+            <img width="200" height="200" src="/img/logo.png"></img>
+            <br />
+            <!--<div class="our-services wow fadeIn" data-wow-delay="1.5s">
+              <b>Наши услуги:</b>
+              <p class="wow fadeIn" data-wow-delay="1.5s">
+                <?php  echo R::findOne('configs','id = 12')->text; ?>
+              </p>
+            </div>-->
+            <br />
+
+            <div class="row">
+                  <div class="buttons wow fadeInUp" data-wow-delay="1s">
+                    <a href="#main-info" class="btn btn-secondary btn-lg scroll">О нас</a>
+                    &nbsp;
+                    <a href="#invite" class="btn btn-primary btn-lg scroll">Подобрать тур</a>
+                  </div>
+                </div>
+                <!--End Button Row-->
+
+          </div>
+        </div>
+
+        <div id="#top" class="row header-info">
+          <div class="col-md-10 col-md-offset-1 text-center">
+            <img width="200" height="200" src="/img/logo.png"></img>
+            <br />
+            <!--<div class="our-services wow fadeIn" data-wow-delay="1.5s">
+              <b>Наши услуги:</b>
+              <p class="wow fadeIn" data-wow-delay="1.5s">
+                <?php  echo R::findOne('configs','id = 12')->text; ?>
+              </p>
+            </div>-->
+            <br />
+
+            <div class="row">
+                  <div class="buttons wow fadeInUp" data-wow-delay="1s">
+                    <a href="#main-info" class="btn btn-secondary btn-lg scroll">О нас</a>
+                    &nbsp;
+                    <a href="#invite" class="btn btn-primary btn-lg scroll">Подобрать тур</a>
+                  </div>
+                </div>
+                <!--End Button Row-->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="main-info" class="pad-lg">
+    <div class="container">
+      <div class="row">
+        <div class="features">
+
+          <div class="col-md-4">
+            <div class="prices">
+              <i class="fa fa-dollar fa-3x"></i>
+              <br>
+              <p class="black text-center">
+                <?php  echo R::findOne('configs','id = 13')->text; ?>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="service">
+              <i class="fa fa-cogs fa-3x"></i>
+              <br>
+              <p class="black text-center">
+                <?php  echo R::findOne('configs','id = 14')->text; ?>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="specialists">
+              <i class="fa fa-group fa-3x"></i>
+              <br>
+              <p class="black text-center">
+                <?php  echo R::findOne('configs','id = 15')->text; ?>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="trends">
+              <i class="fa fa-line-chart fa-3x"></i>
+              <br>
+              <p class="black text-center">
+                <?php  echo R::findOne('configs','id = 16')->text; ?>
+              </p>
+            </div>
+          </div>
+
+
+          <div class="col-md-4">
+            <div class="location">
+              <i class="fa fa-map-marker fa-3x"></i>
+              <br>
+              <p class="black text-center">
+                <?php  echo R::findOne('configs','id = 17')->text; ?>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="speed">
+              <i class="fa fa-paper-plane fa-3x"></i>
+              <br>
+              <p class="black text-center">
+                <?php  echo R::findOne('configs','id = 18')->text; ?>
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!--Pricing-->
+  <section id="discounts" class="pad-lg">
+    <div class="container">
+      <div class="row margin-10">
+        <div class="col-sm-8 col-sm-offset-2 text-center wow fadeInUp" data-wow-delay="0.8s">
+          <h2 class="white">Акции</h2>
+
+          <ul class="discounts-container">
+            <a data-toggle="modal" data-target="#d1">
+              <li>
+                <img src="<?php  echo R::findOne('configs','id = 4')->img; ?>"></img>
+                <h3>
+                  <?php  echo R::findOne('configs','id = 4')->text; ?>
+                </h3>
+                <p>
+                  <?php  echo R::findOne('configs','id = 5')->text; ?>
+                </p>
+              </li>
+            </a>
+		<hr>
+            <a data-toggle="modal" data-target="#d2">
+              <li>
+                <img src="<?php  echo R::findOne('configs','id = 6')->img; ?>"></img>
+                <h3>
+                  <?php  echo R::findOne('configs','id = 6')->text; ?>
+                </h3>
+                <p>
+                  <?php  echo R::findOne('configs','id = 7')->text; ?>
+                </p>
+              </li>
+            </a>
+		<hr>
+            <a data-toggle="modal" data-target="#d3">
+              <li>
+                <img src="<?php  echo R::findOne('configs','id = 8')->img; ?>"></img>
+                <h3>
+                  <?php  echo R::findOne('configs','id = 8')->text; ?>
+                </h3>
+                <p>
+                  <?php  echo R::findOne('configs','id = 9')->text; ?>
+                </p>
+              </li>
+            </a>
+		<hr>
+            <a data-toggle="modal" data-target="#d4">
+              <li>
+                <img src="<?php  echo R::findOne('configs','id = 10')->img; ?>"></img>
+                <h3>
+                  <?php  echo R::findOne('configs','id = 10')->text; ?>
+                </h3>
+                <p>
+                  <?php  echo R::findOne('configs','id = 11')->text; ?>
+                </p>
+              </li>
+            </a>
+          </ul>
+
+        </div>
+      </div>
+
+    </div>
+
+    </div>
+  </section>
+
+  <section id="invite" class="pad-lg light-gray-bg">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2 text-center wow fadeIn" data-wow-delay="0.5s">
+          <h2 class="black">Подбор тура</h2>
+          <br />
+          <p class="black">
+            <?php  echo R::findOne('configs','id = 19')->text; ?>
+          </p>
+          <br />
+
+          <div class="row">
+            <div class="col-6">
+              <form role="form" id="ajax_form" method="POST" action="">
+
+                <ul class="list-inline">
+                  <li>
+                    <input type="name" class="form-control" name="InputName" placeholder="Имя и Фамилия" required>
+                  </li>
+                  <li>
+                    <input type="email" class="form-control" name="InputEmail" placeholder="Email" required>
+                  </li>
+                  <li>
+                    <input type="phone" class="form-control" name="InputPhone" placeholder="Телефон">
+                  </li>
+                </ul>
+
+                <textarea maxlength="360" type="description" id="InputDescription" name="InputDescription" class="form-control" placeholder="Введите краткое описание желаемого тура, чтоб наши сотрудники смогли подобрать Вам подходящий тур."
+                  required></textarea>
+
+
+                <br>
+                <button type='button' class="btn btn-primary btn-lg" id="sendRequest">Отправить</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!--End Form row-->
+
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section id="booking-search" class="pad-xs">
+    <div class="container">
+
+          <div class="row">
+            <div class="col-6">
+              <ins class="bookingaff" data-aid="1703834" data-target_aid="1703834" data-prod="nsb" data-width="100%" data-height="auto" data-lang="ru" data-df_num_properties="3">
+                <!-- Anything inside will go away once widget is loaded. -->
+                    <a href="//www.booking.com?aid=1703834">Booking.com</a>
+            </ins>
+            <script type="text/javascript">
+                (function(d, sc, u) {
+                  var s = d.createElement(sc), p = d.getElementsByTagName(sc)[0];
+                  s.type = 'text/javascript';
+                  s.async = true;
+                  s.src = u + '?v=' + (+new Date());
+                  p.parentNode.insertBefore(s,p);
+                  })(document, 'script', '//aff.bstatic.com/static/affiliate_base/js/flexiproduct.js');
+            </script>
+          </div>
+        </div>
+        <!--End Form row-->
+
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section id="reviews" class="pad-xs">
+    <div class="container">
+      <div class="col-sm-8 col-sm-offset-2 text-center wow fadeInRight" data-wow-delay="0.6s">
+        <h2 class="black">Отзывы</h2>
+        <div id="wpac-review"></div>
+        <script type="text/javascript">
+          wpac_init = window.wpac_init || [];
+          wpac_init.push({ widget: 'Review', id: 9979 });
+          (function () {
+            if ('WIDGETPACK_LOADED' in window) return;
+            WIDGETPACK_LOADED = true;
+            var mc = document.createElement('script');
+            mc.type = 'text/javascript';
+            mc.async = true;
+            mc.src = 'https://embed.widgetpack.com/widget.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+          })();
+        </script>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacts" class="pad-sm" style="background: #f2f2f2;">
+    <div class="container">
+      <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 wow fadeInLeft" data-wow-delay="0.6s">
+        <div class="text-center">
+          <h2 class="black">Контакты</h2>
+        </div>
+
+        <br>
+
+        <div class="col">
+          <ul class="contacts-list">
+            <li>
+              <i class="fa fa-phone"></i>
+              <span class="i-contacts">
+                <?php  echo R::findOne('configs','id = 21')->text; ?> </span>
+            </li>
+            <li>
+              <i class="fa fa-envelope"></i>
+              <span class="i-contacts">
+                <?php  echo R::findOne('configs','id = 22')->text; ?> </span>
+            </li>
+            <li>
+              <i style="margin-left:4px;" class="fa fa-map-marker"></i>
+              &nbsp;
+              <span class="i-contacts">
+                <?php  echo R::findOne('configs','id = 23')->text; ?> </span>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+
+  <div class="map wow fadeInUp" data-wow-delay="0.8s">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1156.0083329439162!2d30.75753986166057!3d46.43944964640382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c633f27e7f17db%3A0x959c6dff6f7e737c!2z0YPQuy4g0JDQutCw0LTQtdC80LjRh9C10YHQutCw0Y8sIDI4LCDQntC00LXRgdGB0LAsINCe0LTQtdGB0YHQutCw0Y8g0L7QsdC70LDRgdGC0YwsIDY1MDAw!5e0!3m2!1sru!2sua!4v1519926347132"
+      width="100%" height="300px" frameborder="0" style="border:0" allowfullscreen></iframe>
+  </div>
+
+  <footer>
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-8 margin-20">
+          <ul class="list-inline social">
+            <li>Connect with us on</li>
+            <li>
+              <a href="https://facebook.com/ICONtravel.odessa/">
+                <i class="fa fa-facebook"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/icon_travel">
+                <i class="fa fa-instagram"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-sm-4 text-right">
+          <p>
+            <small>Copyright &copy; 2018. All rights reserved.
+              <br> Created by 5Y</small>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+
+
+  <!-- JS Placed at the end of the document so the pages load faster -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')</script>
+  <script src="js/wow.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+
+
+</body>
+
+</html>

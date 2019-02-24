@@ -1,0 +1,420 @@
+<?php 
+require 'db.php';
+
+$data = $_POST;
+
+if( isset($data['do_login']) ){
+    $user = R::findOne('users', 'email = ?', array($data['email']));
+    
+    if( $user ){
+        if( $data['password'] == $user->password){
+            echo '<div class="black">Добро пожаловать в админ-панель</div><br>';
+            $_SESSION['logged'] = $user;
+        }else{
+            echo '<div class="black">Не верный пароль</div><br>';
+            echo $user->password;
+        }
+    }else{
+        echo '<div class="black">Не верный email</div><br>';
+    }
+
+}
+
+if( isset($data['send1']) ){
+    if(trim($data['InputTitle']) != ''){
+        $bean1 = R::findOne('configs','id = 1');
+        $bean1->text = $data['InputTitle'];
+        R::store($bean1);
+    }
+
+    if(trim($data['InputKeywords']) != ''){
+        $bean2 = R::findOne('configs','id = 2');
+        $bean2->text = $data['InputKeywords'];
+        R::store($bean2);
+    }
+   
+    if(trim($data['InputDescription']) != ''){
+        $bean3 = R::findOne('configs','id = 3');
+        $bean3->text = $data['InputDescription'];
+        R::store($bean3);
+    }
+
+    if(trim($data['InputShortString']) != ''){
+        $bean4 = R::findOne('configs','id = 12');
+        $bean4->text = $data['InputShortString'];
+        R::store($bean4);
+    }
+
+}
+
+if( isset($data['send2']) ){
+    if(trim($data['InputFutures1']) != ''){
+        $bean1 = R::findOne('configs','id = 13');
+        $bean1->text = $data['InputFutures1'];
+        R::store($bean1);
+    }
+
+    if(trim($data['InputFutures2']) != ''){
+        $bean2 = R::findOne('configs','id = 14');
+        $bean2->text = $data['InputFutures2'];
+        R::store($bean2);
+    }
+    
+    if(trim($data['InputFutures3']) != ''){
+        $bean3 = R::findOne('configs','id = 15');
+        $bean3->text = $data['InputFutures3'];
+        R::store($bean3);
+    }
+
+    if(trim($data['InputFutures4']) != ''){
+        $bean4 = R::findOne('configs','id = 16');
+        $bean4->text = $data['InputFutures4'];
+        R::store($bean4);
+    }
+
+    if(trim($data['InputFutures5']) != ''){
+        $bean5 = R::findOne('configs','id = 17');
+        $bean5->text = $data['InputFutures5'];
+        R::store($bean5);
+    }
+
+    if(trim($data['InputFutures6']) != ''){
+        $bean6 = R::findOne('configs','id = 18');
+        $bean6->text = $data['InputFutures6'];
+        R::store($bean6);
+    }
+
+}
+
+if( isset($data['send3']) ){
+    
+    $bean1 = R::findOne('configs','id = 4');
+    if(trim($data['InputTitle_d1']) != ''){
+        $bean1->text = $data['InputTitle_d1'];
+        R::store($bean1);
+    }
+
+    if(trim($data['InputImg_d1']) != ''){
+        $bean1->img = $data['InputImg_d1'];
+        R::store($bean1);
+    }
+   
+    if(trim($data['InputDescription_d1']) != ''){
+        $bean2 = R::findOne('configs','id = 5');
+        $bean2->text = $data['InputDescription_d1'];
+        R::store($bean2);
+    }
+   
+    $bean3 = R::findOne('configs','id = 6');
+    if(trim($data['InputTitle_d2']) != ''){
+        $bean3->text = $data['InputTitle_d2'];
+        R::store($bean3);
+    }
+
+    if(trim($data['InputImg_d2']) != ''){
+        $bean3->img = $data['InputImg_d2'];
+        R::store($bean3);
+    }
+
+    if(trim($data['InputDescription_d2']) != ''){
+        $bean4 = R::findOne('configs','id = 7');
+        $bean4->text = $data['InputDescription_d2'];
+        R::store($bean4);
+    }
+
+    $bean5 = R::findOne('configs','id = 8');
+    if(trim($data['InputTitle_d3']) != ''){
+        $bean5->text = $data['InputTitle_d3'];
+        R::store($bean5);
+    }
+    if(trim($data['InputImg_d3']) != ''){
+        $bean5->img = $data['InputImg_d3'];
+        R::store($bean5);
+    }
+
+    if(trim($data['InputImg_d3']) != ''){
+        $bean6 = R::findOne('configs','id = 9');
+        $bean6->text = $data['InputDescription_d3'];
+        R::store($bean6);
+    }
+    
+    $bean7 = R::findOne('configs','id = 10');
+    if(trim($data['InputTitle_d4']) != ''){
+        $bean7->text = $data['InputTitle_d4'];
+        R::store($bean7);
+    }
+    if(trim($data['InputImg_d4']) != ''){
+        $bean7->img = $data['InputImg_d4'];
+        R::store($bean7);
+    }
+
+    if(trim($data['InputDescription_d4']) != ''){
+        $bean8 = R::findOne('configs','id = 11');
+        $bean8->text = $data['InputDescription_d4'];
+        R::store($bean8);
+    }
+
+    if(trim($data['InputDiscTitle']) != ''){
+        $bean9 = R::findOne('configs','id = 24');
+        $bean9->text = $data['InputDiscTitle'];
+        R::store($bean9);
+    }
+
+}
+
+if( isset($data['send4']) ){
+    if(trim($data['InputData']) != ''){
+        $bean1 = R::findOne('configs','id = 19');
+        $bean1->text = $data['InputData'];
+        R::store($bean1);
+    }
+}
+
+if( isset($data['send5']) ){
+    if(trim($data['InputContDesc']) != ''){
+        $bean1 = R::findOne('configs','id = 20');
+        $bean1->text = $data['InputContDesc'];
+        R::store($bean1);
+    }
+    
+    if(trim($data['InputContPhone']) != ''){
+        $bean2 = R::findOne('configs','id = 21');
+        $bean2->text = $data['InputContPhone'];
+        R::store($bean2);
+    }
+   
+    if(trim($data['InputContEmail']) != ''){
+        $bean3 = R::findOne('configs','id = 22');
+        $bean3->text = $data['InputContEmail'];
+        R::store($bean3);
+    }
+
+    if(trim($data['InputContAddress']) != ''){
+        $bean4 = R::findOne('configs','id = 23');
+        $bean4->text = $data['InputContAddress'];
+        R::store($bean4);
+    }
+
+}
+
+$requests = R::count( 'requests' );
+
+?>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/panel.css">
+</head>
+
+<body>
+    <?php 
+if( isset($_SESSION['logged'] ) ) 
+{ 
+?>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#top" class="text-logo">icon.travel</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#invite" class="scroll">Подбор тура</a>
+                    </li>
+                    <li>
+                        <a href="#discounts" class="scroll">Акции</a>
+                    </li>
+                    <li>
+                        <a href="#reviews" class="scroll">Отзывы</a>
+                    </li>
+                    <li>
+                        <a href="#contacts" class="scroll">Контакты</a>
+                    </li>
+                </ul>
+            </div>
+            <!--/.navbar-collapse -->
+        </div>
+    </div>
+
+    <div class="container" style='margin-top:90px;'>
+
+        <section id="configs">
+            <title>Загрузка изображений, JPG,PNG,GIF</title>
+
+
+            <h2>При загрузке изображения с одинаковыми названиями старый файл удаляется и заменяется последним загрженным</h2>
+            <form method="post" action="basic.php" enctype="multipart/form-data">
+                <label for="inputfile">Upload File</label>
+                <input type="file" id="inputfile" name="inputfile">
+                </br>
+                <input type="submit" class="btn btn-primary btn-lg" value="Click To Upload">
+            </form>
+        </section>
+
+        <section id="main-info">
+            <h3>Main</h3>
+
+           
+
+            
+
+            <form role="form" method="POST">
+
+                <textarea maxlength="550" type="description" name="InputTitle" class="form-control" placeholder="<?php  echo R::findOne('configs','id = 1')->text; ?>"><?php  echo R::findOne('configs','id = 1')->text; ?></textarea>
+
+                <textarea maxlength="1000" type="description" name="InputKeywords" class="form-control" placeholder="<?php  echo R::findOne('configs','id = 2')->text; ?>"><?php  echo R::findOne('configs','id = 2')->text; ?></textarea>
+
+                <textarea maxlength="1000" type="description" name="InputDescription" class="form-control" placeholder="<?php  echo R::findOne('configs','id = 3')->text; ?>"><?php  echo R::findOne('configs','id = 3')->text; ?></textarea>
+
+                <textarea maxlength="550" type="description" name="InputShortString" class="form-control" placeholder="<?php  echo R::findOne('configs','id = 12')->text; ?>"><?php  echo R::findOne('configs','id = 12')->text; ?></textarea>
+
+
+                <br>
+                <button type='submit' class="btn btn-primary btn-lg" name="send1">Отправить</button>
+            </form>
+
+        </section>
+
+        <section id="futures">
+            <h3>Futures</h3>
+
+            <form role="form" method="POST">
+
+                <textarea maxlength="550" type="description" name="InputFutures1" class="form-control" placeholder="<?php  echo R::findOne('configs','id = 13')->text; ?>"><?php  echo R::findOne('configs','id = 13')->text; ?></textarea>
+
+                <textarea maxlength="550" type="description" name="InputFutures2" class="form-control" placeholder="<?php  echo R::findOne('configs','id = 14')->text; ?>"><?php  echo R::findOne('configs','id = 14')->text; ?></textarea>
+
+                <textarea maxlength="550" type="description" name="InputFutures3" class="form-control" placeholder="<?php  echo R::findOne('configs','id = 15')->text; ?>"><?php  echo R::findOne('configs','id = 15')->text; ?></textarea>
+
+                <textarea maxlength="550" type="description" name="InputFutures4" class="form-control" placeholder="<?php  echo R::findOne('configs','id = 16')->text; ?>"><?php  echo R::findOne('configs','id = 16')->text; ?></textarea>
+
+                <textarea maxlength="550" type="description" name="InputFutures5" class="form-control" placeholder="<?php  echo R::findOne('configs','id = 17')->text; ?>"><?php  echo R::findOne('configs','id = 17')->text; ?></textarea>
+
+                <textarea maxlength="550" type="description" name="InputFutures6" class="form-control" placeholder="<?php  echo R::findOne('configs','id = 18')->text; ?>"><?php  echo R::findOne('configs','id = 18')->text; ?></textarea>
+
+
+                <br>
+                <button type='submit' class="btn btn-primary btn-lg" name="send2">Отправить</button>
+            </form>
+
+        </section>
+
+        <section id="discounts">
+            <h3>Discounts</h3>
+
+            <form role="form" method="POST">
+
+                <textarea maxlength="550" type="description" name="InputDiscTitle" class="form-control" placeholder="<?php  echo R::findOne('configs','id = 24')->text; ?>"><?php  echo R::findOne('configs','id = 24')->text; ?></textarea>
+
+
+                <textarea maxlength="550" type="description" name="InputTitle_d1" class="form-control" placeholder="<?php  echo R::findOne('configs','id = 4')->text; ?>"><?php  echo R::findOne('configs','id = 4')->text; ?></textarea>
+
+                <textarea maxlength="2500" type="description" name="InputImg_d1" class="form-control" placeholder="<?php  echo R::findOne('configs','id = 4')->img; ?>"><?php  echo R::findOne('configs','id = 4')->img; ?></textarea>
+
+                <textarea maxlength="1500" type="description" name="InputDescription_d1" class="form-control" placeholder="<?php  echo R::findOne('configs','id = 5')->text; ?>"><?php  echo R::findOne('configs','id = 5')->text; ?></textarea>
+
+                <br>
+
+                <textarea maxlength="500" type="description" name="InputTitle_d2" class="form-control" placeholder="<?php  echo R::findOne('configs','id = 6')->text; ?>"><?php  echo R::findOne('configs','id = 6')->text; ?></textarea>
+
+                <textarea maxlength="2500" type="description" name="InputImg_d2" class="form-control" placeholder="<?php  echo R::findOne('configs','id = 6')->img; ?>"><?php  echo R::findOne('configs','id = 6')->img; ?></textarea>
+
+                <textarea maxlength="1500" type="description" name="InputDescription_d2" class="form-control" placeholder="<?php  echo R::findOne('configs','id = 7')->text; ?>"><?php  echo R::findOne('configs','id = 7')->text; ?></textarea>
+
+                <br>
+
+                <textarea maxlength="550" type="description" name="InputTitle_d3" class="form-control" placeholder="<?php  echo R::findOne('configs','id = 8')->text; ?>"><?php  echo R::findOne('configs','id = 8')->text; ?></textarea>
+
+                <textarea maxlength="2500" type="description" name="InputImg_d3" class="form-control" placeholder="<?php  echo R::findOne('configs','id = 8')->img; ?>"><?php  echo R::findOne('configs','id = 8')->img; ?></textarea>
+
+                <textarea maxlength="1500" type="description" name="InputDescription_d3" class="form-control" placeholder="<?php  echo R::findOne('configs','id = 9')->text; ?>"><?php  echo R::findOne('configs','id = 9')->text; ?></textarea>
+
+                <br>
+
+                <textarea maxlength="500" type="description" name="InputTitle_d4" class="form-control" placeholder="<?php  echo R::findOne('configs','id = 10')->text; ?>"><?php  echo R::findOne('configs','id = 10')->text; ?></textarea>
+
+                <textarea maxlength="2500" type="description" name="InputImg_d4" class="form-control" placeholder="<?php  echo R::findOne('configs','id = 10')->img; ?>"><?php  echo R::findOne('configs','id = 10')->img; ?></textarea>
+
+                <textarea maxlength="1500" type="description" name="InputDescription_d4" class="form-control" placeholder="<?php  echo R::findOne('configs','id = 11')->text; ?>"><?php  echo R::findOne('configs','id = 11')->text; ?></textarea>
+
+
+
+                <br>
+                <button type='submit' class="btn btn-primary btn-lg" name="send3">Отправить</button>
+            </form>
+        </section>
+
+        <section id="invite">
+            <h3>Tours</h3>
+
+            <form role="form" method="POST">
+                <textarea maxlength="550" type="description" name="InputInvDesc" class="form-control" placeholder="<?php  echo R::findOne('configs','id = 19')->text; ?>"><?php  echo R::findOne('configs','id = 19')->text; ?></textarea>
+                <br>
+                <button type='submit' class="btn btn-primary btn-lg" name="send4">Отправить</button>
+            </form>
+        </section>
+
+        <section id="contacts">
+            <h3>Contacts</h3>
+
+            <form role="form" method="POST">
+                <textarea maxlength="550" type="description" id="InputData1" name="InputContDesc" class="form-control" placeholder="<?php  echo R::findOne('configs','id = 20')->text; ?>"><?php  echo R::findOne('configs','id = 20')->text; ?></textarea>
+                <textarea maxlength="550" type="description" id="InputData2" name="InputContPhone" class="form-control" placeholder="<?php  echo R::findOne('configs','id = 21')->text; ?>"><?php  echo R::findOne('configs','id = 21')->text; ?></textarea>
+                <textarea maxlength="550" type="description" id="InputData3" name="InputContEmail" class="form-control" placeholder="<?php  echo R::findOne('configs','id = 22')->text; ?>"><?php  echo R::findOne('configs','id = 22')->text; ?></textarea>
+                <textarea maxlength="550" type="description" id="InputData4" name="InputContAddress" class="form-control" placeholder="<?php  echo R::findOne('configs','id = 23')->text; ?>"><?php  echo R::findOne('configs','id = 23')->text; ?></textarea>
+
+
+                <br>
+                <button type='submit' class="btn btn-primary btn-lg" name="send5">Отправить</button>
+            </form>
+        </section>
+
+    </div>
+
+    <?php
+} else { 
+
+?>
+
+
+    <div class="p-x-1 p-y-3">
+        <form class="card card-block m-x-auto bg-faded form-width" action="/panel.html" method="POST">
+            <legend class="m-b-1 text-xs-center">Авторизация</legend>
+            <div class="form-group input-group">
+                <span class="input-group-addon">@</span>
+                <span class="has-float-label">
+                    <input class="form-control" required name="email" type="email" placeholder="name@example.com">
+                    <label for="email">E-mail</label>
+                </span>
+            </div>
+            <div class="form-group has-float-label">
+                <input class="form-control" required name="password" type="password" placeholder="••••••••">
+                <label for="password">Пароль</label>
+            </div>
+
+
+            <div class="text-xs-center">
+                <button class="btn btn-block btn-primary" type="submit" name="do_login">Войти</button>
+            </div>
+        </form>
+    </div>
+
+    <?php 
+} 
+?>
+
+    <script src="js/panel.js"></script>
+
+</body>
+
+</html>

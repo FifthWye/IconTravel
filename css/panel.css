@@ -1,0 +1,147 @@
+
+/* Panel -----------------*/
+.form-width {
+  max-width: 25rem;
+}
+
+.has-float-label {
+  position: relative;
+}
+
+.has-float-label label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  cursor: text;
+  font-size: 75%;
+  opacity: 1;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  top: -.5em;
+  left: 0.75rem;
+  z-index: 3;
+  line-height: 1;
+  padding: 0 1px;
+}
+
+.has-float-label label::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  background: white;
+  height: 2px;
+  top: 50%;
+  left: -.2em;
+  right: -.2em;
+  z-index: -1;
+}
+
+.has-float-label .form-control::-webkit-input-placeholder {
+  opacity: 1;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.has-float-label .form-control:placeholder-shown:not(:focus)::-webkit-input-placeholder {
+  opacity: 0;
+}
+
+.has-float-label .form-control:placeholder-shown:not(:focus)+label {
+  font-size: 150%;
+  opacity: .5;
+  top: .3em;
+}
+
+.input-group .has-float-label {
+  display: table-cell;
+}
+
+.input-group .has-float-label .form-control {
+  border-radius: 0.25rem;
+}
+
+.input-group .has-float-label:not(:last-child) .form-control {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.input-group .has-float-label:not(:first-child) .form-control {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  margin-left: -1px;
+}
+
+
+.navbar {
+  border: 0px solid rgba(0, 0, 0, 0);
+  background: #000;
+  margin: auto;
+  min-height: 60px;
+  padding-top: 8px;
+  position: fixed;
+  transition: top 0.4s ease 0s;
+}
+
+.navbar.open {
+  top: 0;
+}
+
+.navbar-inverse .navbar-nav > li > a, .navbar-nav a {
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+  color: #8be2e5
+}
+
+.nav > li > a {
+  position: relative;
+  display: block;
+  padding: 10px 10px;
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+  border-color: #FFF;
+}
+
+.navbar-inverse .navbar-toggle {
+background-color:#333;
+}
+
+.text-logo {
+font-family: 'Montserrat', sans-serif;
+font-size: 24px;
+line-height: 40px;
+etter-spacing: -0.5px;
+color: #ffffff;
+margin-left:5px;
+margin-top: 18px;
+text-transform: uppercase;
+
+}
+.text-logo:hover{
+color: #8be2e5;
+}
+
+.text-logo:active{
+color: #8be2e5;
+}
+
+
+.first-display-title{
+font-family: 'Montserrat', sans-serif;
+font-size: 54px;
+text-transform: uppercase;
+font-weight: lighter;
+}
+
+.logo img {
+margin-top: 6px;
+
+}
+
+.menu ul {
+font-size: 16px;
+}
