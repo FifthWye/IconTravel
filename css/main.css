@@ -10,6 +10,10 @@ body.modal-open{
   overflow-y: scroll !important; 
 }
 
+.hidden{
+  display: none;
+}
+
 p, .lead {
 	font-family: 'Montserrat', sans-serif;
 }
