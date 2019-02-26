@@ -19,6 +19,9 @@ RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^.*$ $0.html [L,QSA]
 RewriteCond %{THE_REQUEST} ([^\s]*)\.html(\?[^\s]*)?
 RewriteRule (.*) %1 [R=301,L]
+# Редирект с http на https
+RewriteCond %{HTTPS} !=on
+RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [R,L]
 
 
 
